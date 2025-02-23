@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<center>
+  <h2>Events:</h2>
+  <div class="news-container">
+    {% for events in events_data %}
+    <div class="news">
+      <h1><strong>Name:</strong> {{ events.name }}</h1>
+      <p><strong>Location:</strong> {{ events.location }}</p>
+      <p class="date"><strong>Date:</strong> {{ events.date }}</p>
+      <p><strong>Type:</strong> {{ events.type }}</p>
+      <a href="{% url 'events_details' events.id %}">Read More</a>
+    </div>
+    {% endfor %}
+  </div>
+</center>
+{% endblock content %}

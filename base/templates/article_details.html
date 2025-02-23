@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container" style=" text-align: center;">
+  <h1>{{article.title | upper}}</h1>
+    <p>{{article.desc}}</p>
+</div>
+<!-- <a href="{% url 'home' %}">Go Back</a><br> -->
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<center>
+  <h2>News:</h2>
+  <div class="news-container">
+    {% for news in news_data %}
+    <div class="news">
+      <h1><strong>Title:</strong> {{ news.title }}</h1>
+      <p><strong>Author:</strong> {{ news.author }}</p>
+      <p class="date"><strong>Date:</strong> {{ news.date }}</p>
+      <p><strong>Content:</strong> {{ news.content | truncatewords:10}}</p>
+      <a href="{% url 'news_post' news.id %}">Read More</a>
+    </div>
+    {% endfor %}
+  </div>
+</center>
+{% endblock content %}
